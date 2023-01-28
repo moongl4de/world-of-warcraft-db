@@ -1,0 +1,12 @@
+{
+  "name": "world-of-warcraft-db",
+  "version": "1.0.0",
+  "description": "A database for World of Warcraft: Classic built with MySQL, Express, React and Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
