@@ -1,14 +1,23 @@
-module.exports = (sequelize, Sequelize) => {
-  const Tutorial = sequelize.define("tutorial", {
-    title: {
-      type: Sequelize.STRING,
+module.exports = (sequelize, DataTypes) => {
+  const Item = sequelize.define("item", {
+    name: {
+      type: DataTypes.STRING(255),
     },
-    description: {
-      type: Sequelize.STRING,
+    stats: {
+      type: DataTypes.JSON,
+      // get: function () {
+      //   return JSON.parse(this.getDataValue("value"));
+      // },
+      // set: function (value) {
+      //   this.setDataValue("value", JSON.stringify(value));
+      // },
     },
-    published: {
-      type: Sequelize.BOOLEAN,
+    type: {
+      type: DataTypes.STRING(255),
+    },
+    flavorText: {
+      type: DataTypes.STRING(255),
     },
   });
-  return Tutorial;
+  return Item;
 };

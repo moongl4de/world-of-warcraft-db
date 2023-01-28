@@ -4,6 +4,7 @@ const cors = require("cors");
 const routes = require("./routes");
 const port = 9000;
 const app = express();
+require("dotenv").config();
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -17,9 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./models/index.js");
 
-db.sequelize.sync();
+// db.sequelize.sync();
+db.sequelize.sync({ force: true });
 
-console.log(db);
+// console.log(db);
 
 app.get("/", (req, res) => {
   res.send("Hey there!");

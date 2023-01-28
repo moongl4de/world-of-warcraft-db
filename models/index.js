@@ -1,6 +1,6 @@
 const dbConfig = require("../config/db.config.js");
 
-const Sequelize = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
@@ -14,11 +14,17 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   },
 });
 
+sequelize.authenticate().then(() => {
+  console.log("Connected Successfully.");
+});
+
 const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./tutorial.model.js");
+db.items = require("./item.model")(sequelize, DataTypes);
+
+// db.sequelize.sync();
 
 module.exports = db;
