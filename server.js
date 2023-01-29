@@ -32,6 +32,8 @@ app.use(express.static("client/build"));
 // }
 app.use(routes);
 
+require("./routes/apiRoutes/item.routes")(app);
+
 app.listen(port, function (err) {
   if (err) {
     console.log("error", err);
