@@ -2,12 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./routes");
+const nexus = require("./nexusAPI/index.js");
+const db = require("./models/index.js");
+const classicAPI = require("./nexusAPI/index.js");
 const port = 9000;
 const app = express();
-require("dotenv").config();
+const path = require("path");
+
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 var corsOptions = {
-  origin: "http://localhost:8081",
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
@@ -16,23 +21,43 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./models/index.js");
-
 // db.sequelize.sync();
-db.sequelize.sync({ force: true });
+///this will drop db if exists
+// db.sequelize.sync({ force: true });
 
-// console.log(db);
-
-app.get("/", (req, res) => {
-  res.send("Hey there!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hey there!");
+// });
 
 // if (process.env.NODE_ENV === "production") {
-app.use(express.static("client/build"));
+// app.use(express.static("client/build"));
 // }
 app.use(routes);
+// app.use(nexus);
+require("./routes/apiRoutes/item.routes", "./routes/apiRoutes/nexus.routes")(
+  app
+);
 
-require("./routes/apiRoutes/item.routes")(app);
+const Database = require("wow-classic-items");
+const items = new Database.Items();
+const professions = new Database.Professions();
+const zones = new Database.Zones();
+const classes = new Database.Classes();
+
+app.post("/nexus/", (req, res) => {
+  // console.log(req.body.name);
+  const result = items.filter((word) => {
+    return word.name.includes(req.body.name);
+  });
+  res.send(result);
+});
+
+// router.get("/", (req, res) => {
+//   console.log("sup");
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
+
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.listen(port, function (err) {
   if (err) {
