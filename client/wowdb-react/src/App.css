@@ -2,16 +2,25 @@
 
 html {
   background-color: black;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
 .App {
   text-align: center;
   background-color: #424242;
   background-image: url("../src/assets/nefarian-image.jpg");
+  /* background-image: url("../src/assets/ragnaros.jpg");
+  background-image: url("../src/assets/hakkar.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding: 0;
 }
 
 .App-logo {
@@ -25,12 +34,14 @@ html {
   }
 }
 
-/* #priestButton:hover {
-  background-color: rgba(255, 255, 255, 0.212);
-  text-shadow: 0px 10px 10 rgb(0, 0, 0) !important;
+#priestButton:hover {
+  /* background-image: url("./assets/icon-priest.webp");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center; */
 }
 
-#warriorButton:hover {
+/* #warriorButton:hover {
   background-color: rgba(44, 24, 0, 0.473);
   text-shadow: 0px 10px 10 rgb(0, 0, 0) !important;
 }
@@ -40,24 +51,83 @@ html {
   text-shadow: 0px 10px 10 rgb(0, 0, 0) !important;
 } */
 
+#priestButton:hover {
+  border: 2px solid rgb(255, 255, 255);
+
+  box-shadow: 0px 0px 65px rgb(255, 255, 255) inset;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0) !important;
+}
+
+#warriorButton:hover {
+  border: 2px solid rgb(44, 24, 0);
+  box-shadow: 0px 0px 65px rgb(94, 51, 0) inset;
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
+
+#hunterButton:hover {
+  border: 2px solid rgb(46, 102, 0);
+  box-shadow: 0px 0px 65px rgb(69, 153, 0) inset;
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
+
+#rogueButton:hover {
+  border: 2px solid rgb(255, 230, 0);
+  box-shadow: 0px 0px 65px inset rgb(255, 230, 0);
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
+
+#mageButton:hover {
+  border: 2px solid rgb(0, 183, 255);
+  box-shadow: 0px 0px 65px inset rgb(0, 183, 255);
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
+
+#druidButton:hover {
+  border: 2px solid rgb(255, 145, 0);
+  box-shadow: 0px 0px 65px inset rgb(255, 145, 0);
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
+
+#paladinButton:hover {
+  border: 2px solid rgb(245, 139, 255);
+  box-shadow: 0px 0px 65px inset rgb(245, 139, 255);
+  text-shadow: 0px 10px 100px rgb(0, 0, 0) !important;
+}
+
+#warlockButton:hover {
+  border: 2px solid rgb(134, 0, 146);
+  box-shadow: 0px 0px 65px inset rgb(156, 0, 170);
+  text-shadow: 0px 10px 50px rgb(0, 0, 0) !important;
+}
 .container-search {
   max-width: 500px;
   margin: 50px auto;
 }
 
 .backgroundOverlay {
-  background-color: rgba(0, 0, 0, 0.76) !important;
+  background-color: rgba(0, 0, 0, 0.76);
   border: 1px solid rgba(255, 255, 255, 0.418);
 
-  width: 50vw;
+  width: 75vw;
+  max-width: 1000px;
   padding: 50px !important;
-  box-shadow: 4px 4px 20px rgb(0, 0, 0);
+  box-shadow: 4px 4px 20px rgb(172, 172, 172);
   padding: 15px 60px !important;
   display: inline-block !important;
+
+  background: rgba(0, 0, 0, 0.137);
+  box-shadow: 0 8px 900px rgb(0, 0, 0) inset;
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 1px;
+  text-shadow: 0px 0px 4px black;
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  padding: 0;
+  margin: 0;
 }
 
 #wowLogo {
-  max-width: 300px;
+  max-width: 320px;
   width: 90%;
 }
 
@@ -86,22 +156,27 @@ h4 {
 }
 
 .itemDiv {
-  background-color: rgba(0, 0, 0, 0.603);
+  background-color: rgba(0, 0, 0, 0.336);
   border: 1px solid rgba(255, 255, 255, 0.452);
   padding: 10px;
   /* margin: 4px;
   padding: 5px;
   width: 100px; */
+  min-height: 66px;
   font-size: 18px;
+  font-size: 1.4rem;
   border-radius: 0px !important;
   color: white;
+  padding: 18px 0;
+  border: 2px solid rgba(255, 255, 255, 0.377);
+  text-align: center;
 }
 
 .itemDiv:hover {
-  border: 1px solid rgb(255, 255, 255);
-  transition: 0.5s;
-  background-color: rgba(175, 175, 175, 0.274);
-  text-shadow: 1px 1px 10px rgb(153, 0, 255);
+  /* border: 1px solid rgb(255, 255, 255); */
+
+  background-color: rgba(34, 34, 34, 0.13);
+  /* text-shadow: 1px 1px 10px rgb(153, 0, 255); */
 }
 
 .App-header {
@@ -112,7 +187,7 @@ h4 {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  animation: fadeIn 1.5s;
+  /* animation: fadeIn 1.5s; */
 }
 
 ul {

@@ -2,6 +2,8 @@
 
 This is a database for BiS items in World of Warcraft: Classic (2005)
 
+![alt text](./client/wowdb-react/src/assets/readme.jpg)
+
 ###### I literally just started building this application, so... if you're reading this, you're pretty early. Like, a little _too_ early... _hmm..._
 
 <hr/>
