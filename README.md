@@ -2,7 +2,7 @@
 
 This is a database for BiS items in World of Warcraft: Classic (2005)
 
-###### I literally just starting building this application, so... if you're reading this, you're pretty early. Like, a little _too_ early... _hmm..._
+###### I literally just started building this application, so... if you're reading this, you're pretty early. Like, a little _too_ early... _hmm..._
 
 <hr/>
 
