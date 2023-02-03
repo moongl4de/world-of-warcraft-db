@@ -1,13 +1,155 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap");
-
+@import url("https://fonts.cdnfonts.com/css/friz-quadrata-std");
 html {
   background-color: black;
   padding: 0;
 }
 
+@media screen and (max-width: 944px) {
+  .rightSquare {
+    position: relative;
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .itemSquare,
+  .blank,
+  .enchant {
+    /* background-color: lightgreen; */
+    margin: 0;
+  }
+
+  .backgroundOverlay {
+    padding: 0 !important;
+    margin: 0 !important;
+    /* background-color: red !important;
+    width: 100% !important; */
+    width: 99% !important;
+  }
+  .row {
+    padding: 0;
+    margin: 0;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
+}
+
+.landingPageHeader {
+}
+
+.bisIcon {
+  width: 2.9rem;
+  height: 2.9rem;
+}
+
+.itemSquare {
+  font-size: 10px;
+  width: 3rem;
+  height: 3rem;
+  max-width: 100px;
+  max-height: 100px;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.301);
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.blank {
+  border: 1px solid rgba(255, 255, 255, 0);
+  width: 3rem;
+  height: 3rem;
+  max-width: 100px;
+  max-height: 100px;
+
+  /* margin: 5px; */
+}
+
+.Rare {
+  border: 4px solid rgb(30, 30, 160);
+  box-shadow: 0px 0px 10px rgb(30, 30, 160);
+}
+
+.Legendary {
+  border: 4px solid rgb(255, 102, 0);
+  box-shadow: 0px 0px 10px rgb(255, 102, 0);
+}
+
+#leftCol {
+  background-color: red !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: calc(100vh - 100px);
+}
+
+.colShorten {
+  max-height: 500px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.enchant {
+  border: 1px solid rgba(255, 255, 255, 0.596);
+  width: 1rem;
+  height: 1rem;
+  max-width: 100px;
+  max-height: 100px;
+  position: absolute;
+  left: 22%;
+
+  margin: 12px auto;
+}
+.enchantAbove {
+  border: 1px solid rgba(255, 255, 255, 0.596);
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.enchantRight {
+  border: 1px solid rgba(255, 255, 255, 0.596);
+  width: 1rem;
+  height: 1rem;
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  right: 35%;
+  margin: 12px auto;
+}
+
+.specBtn {
+  background-color: rgba(27, 27, 27, 0.466) !important;
+  border: 1px solid black;
+  height: 40px;
+  width: 115px;
+  margin: 2px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.specBtn:hover {
+  border: 1px solid rgb(201, 195, 195);
+}
+
+.rightSquare {
+  position: relative;
+  right: 50%;
+}
+
+.specBtn:active,
+.specBtn:focus,
+.specBtn:target {
+  border: 1px solid rgb(201, 195, 195);
+  box-shadow: 0px 0px 22px rgb(255, 255, 255) inset;
 }
 
 .App {
@@ -110,10 +252,10 @@ body {
 
   width: 75vw;
   max-width: 1000px;
-  padding: 50px !important;
+  padding: 50px;
   box-shadow: 4px 4px 20px rgb(172, 172, 172);
-  padding: 15px 60px !important;
-  display: inline-block !important;
+  padding: 15px 60px;
+  display: inline-block;
 
   background: rgba(0, 0, 0, 0.137);
   box-shadow: 0 8px 900px rgb(0, 0, 0) inset;
@@ -124,6 +266,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.308);
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 #wowLogo {
@@ -142,8 +285,11 @@ body {
 h1,
 h2,
 h3,
-h4 {
-  font-family: "Source Sans Pro", sans-serif;
+h4,
+h5,
+p {
+  /* font-family: "Source Sans Pro", sans-serif; */
+  font-family: "Friz Quadrata Std", sans-serif;
   font-weight: 400;
 }
 @keyframes fadeIn {

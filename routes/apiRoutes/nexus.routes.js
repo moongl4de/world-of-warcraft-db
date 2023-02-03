@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  const nexus = require("../../controllers/item.controller.js");
+  const nexus = require("../../controllers/nexus.controller.js");
 
   let router = require("express").Router();
 

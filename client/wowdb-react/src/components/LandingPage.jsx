@@ -7,137 +7,156 @@ import Col from "react-bootstrap/Col";
 import "../App.css";
 import axios from "axios";
 import wowLogo from "../assets/wow-transparent.png";
+import { useNavigate } from "react-router-dom";
 import priestIcon from "../assets/icon-priest.webp";
 // import SearchResults from "./components/Result.jsx";
 
 let results = [];
+// const [classSelected, setClassSelected] = useState("");
 
-function LandingPage() {
+function LandingPage({ setClassSelected, classSelected }) {
+  const navigate = useNavigate();
+
+  // setClassSelected("");
+
   function setClassClick(e, pickedClass) {
+    console.log("CLASS SELECTED", classSelected);
     e.preventDefault();
     console.log(pickedClass);
     setClassSelected(pickedClass);
+
+    // setClassSelected(pickedClass);
+
+    // console.log(classSelected);
+    // return pickedClass;
+    navigate(`/bis/${pickedClass}`);
   }
-  const [classSelected, setClassSelected] = useState("");
+
+  // const navigate = useNavigate();
+
+  function Header() {
+    return (
+      <Container fluid className="backgroundOverlay ">
+        <img id="wowLogo" src={wowLogo} alt="asd" />
+        <h2>Best in Slot List</h2>
+        <h5>- Select Your Class -</h5>
+        <hr style={{ margin: "50px" }} />
+        {/* <i>{classSelected}</i> */}
+        <Row
+          className="justify-content-center topRow"
+          style={{ marginTop: "5px" }}
+        >
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Priest");
+            }}
+            sm={6}
+            md={2}
+            lg={2}
+            id="priestButton"
+            className="itemDiv btn"
+          >
+            Priest
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Warrior");
+            }}
+            sm={6}
+            md={2}
+            lg={2}
+            id="warriorButton"
+            className="itemDiv btn"
+          >
+            Warrior
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Hunter");
+            }}
+            sm={6}
+            md={2}
+            lg={2}
+            id="hunterButton"
+            className="itemDiv btn"
+          >
+            Hunter
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Warlock");
+            }}
+            sm={6}
+            md={2}
+            lg={2}
+            id="warlockButton"
+            className="itemDiv btn"
+          >
+            Warlock
+          </Col>
+        </Row>
+        <Row className="justify-content-center ">
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Mage");
+            }}
+            sm={12}
+            md={2}
+            lg={2}
+            id="mageButton"
+            className="itemDiv btn"
+          >
+            Mage
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Rogue");
+            }}
+            sm={12}
+            md={2}
+            lg={2}
+            id="rogueButton"
+            className="itemDiv btn"
+          >
+            Rogue
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Druid");
+            }}
+            sm={12}
+            md={2}
+            lg={2}
+            id="druidButton"
+            className="itemDiv btn"
+          >
+            Druid
+          </Col>
+          <Col
+            onClick={(e) => {
+              setClassClick(e, "Paladin");
+            }}
+            sm={12}
+            md={2}
+            lg={2}
+            id="paladinButton"
+            className="itemDiv btn"
+          >
+            Paladin
+          </Col>
+        </Row>{" "}
+        <br /> <br />
+      </Container>
+    );
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="landingPageHeader">
-          <Container fluid className="backgroundOverlay ">
-            <img id="wowLogo" src={wowLogo} alt="asd" />
-            <h2>Best in Slot List</h2>
-            <h5>- Select Your Class -</h5>
-            <hr style={{ margin: "50px" }} />
-            {/* <i>{classSelected}</i> */}
-            <Row
-              className="justify-content-center topRow"
-              style={{ marginTop: "5px" }}
-            >
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Priest");
-                }}
-                sm={6}
-                md={2}
-                lg={2}
-                id="priestButton"
-                className="itemDiv btn"
-              >
-                Priest
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Warrior");
-                }}
-                sm={6}
-                md={2}
-                lg={2}
-                id="warriorButton"
-                className="itemDiv btn"
-              >
-                Warrior
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Hunter");
-                }}
-                sm={6}
-                md={2}
-                lg={2}
-                id="hunterButton"
-                className="itemDiv btn"
-              >
-                Hunter
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Warlock");
-                }}
-                sm={6}
-                md={2}
-                lg={2}
-                id="warlockButton"
-                className="itemDiv btn"
-              >
-                Warlock
-              </Col>
-            </Row>
-            <Row className="justify-content-center ">
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Mage");
-                }}
-                sm={12}
-                md={2}
-                lg={2}
-                id="mageButton"
-                className="itemDiv btn"
-              >
-                Mage
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Rogue");
-                }}
-                sm={12}
-                md={2}
-                lg={2}
-                id="rogueButton"
-                className="itemDiv btn"
-              >
-                Rogue
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Druid");
-                }}
-                sm={12}
-                md={2}
-                lg={2}
-                id="druidButton"
-                className="itemDiv btn"
-              >
-                Druid
-              </Col>
-              <Col
-                onClick={(e) => {
-                  setClassClick(e, "Paladin");
-                }}
-                sm={12}
-                md={2}
-                lg={2}
-                id="paladinButton"
-                className="itemDiv btn"
-              >
-                Paladin
-              </Col>
-            </Row>{" "}
-            <br /> <br />
-          </Container>
-        </div>
+          <Header />
 
-        {/* <div id="imageHeader">
+          {/* <div id="imageHeader">
       <h1>Thunderfury.io</h1>
       <p id="headline">World of Warcraft: Classic Database</p>
    
@@ -156,6 +175,7 @@ function LandingPage() {
 
       </div>
     </div> */}
+        </div>
       </header>
     </div>
   );
