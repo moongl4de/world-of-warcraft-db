@@ -29,6 +29,8 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.items = require("./item.model")(sequelize, DataTypes);
+db.gearset = require("./gearset.model")(sequelize, DataTypes);
+console.log(db.gearset);
 
 // db.sequelize.sync();
 

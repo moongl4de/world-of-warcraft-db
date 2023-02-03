@@ -3,6 +3,7 @@ import { Route, Routes, useParams } from "react-router-dom";
 import { useState, setState } from "react";
 import LandingPage from "./components/LandingPage";
 import BiSList from "./components/BiSList.jsx";
+import Edit from "./components/Edit.jsx";
 import "./App.css";
 
 function ClassParams() {
@@ -12,8 +13,11 @@ function ClassParams() {
 }
 
 function App() {
+  const [selectedItem, setSelectedItem] = useState("lol");
   const [classSelected, setClassSelected] = useState("");
   const [specSelected, setSpecSelected] = useState("");
+
+  console.log(selectedItem);
 
   return (
     <Routes>
@@ -32,6 +36,19 @@ function App() {
         path="bis/:classSelectedURL"
         element={
           <BiSList
+            classSelected={classSelected}
+            setClassSelected={setClassSelected}
+            specSelected={specSelected}
+            setSpecSelected={setSpecSelected}
+          />
+        }
+      ></Route>
+      <Route
+        path="edit"
+        element={
+          <Edit
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
             classSelected={classSelected}
             setClassSelected={setClassSelected}
             specSelected={specSelected}

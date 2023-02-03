@@ -34,9 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // }
 app.use(routes);
 // app.use(nexus);
-require("./routes/apiRoutes/item.routes", "./routes/apiRoutes/nexus.routes")(
-  app
-);
+require("./routes/apiRoutes/item.routes")(app);
+require("./routes/apiRoutes/gearset.routes")(app);
 
 const Database = require("wow-classic-items");
 const items = new Database.Items();
@@ -45,11 +44,16 @@ const zones = new Database.Zones();
 const classes = new Database.Classes();
 
 app.post("/nexus/", (req, res) => {
-  // console.log(req.body.name);
-  const result = items.filter((word) => {
-    return word.name.includes(req.body.name);
-  });
-  res.send(result);
+  console.log(req.body.name);
+
+  let itemId = req.body.itemId;
+  let resArr = [];
+
+  res.send(
+    (result = items.filter((word) => {
+      return word.name.toLowerCase().includes(req.body.name.toLowerCase());
+    }))
+  );
 });
 
 // router.get("/", (req, res) => {

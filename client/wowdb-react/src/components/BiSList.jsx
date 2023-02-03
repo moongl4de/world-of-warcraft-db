@@ -1,8 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { useState, setState, useEffect } from "react";
 
-import priest from "../json/priest.json";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -16,7 +14,6 @@ import Item from "../components/Item";
 import priestIcon from "../assets/icon-priest.webp";
 
 const params = new URLSearchParams(window.location.pathname);
-console.log(priest);
 
 function BiSList({ setClassSelected, classSelected }) {
   const { classSelectedURL } = useParams();

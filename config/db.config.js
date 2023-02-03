@@ -5,7 +5,7 @@ module.exports = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: process.env.PASSWORD,
-  DB: "testdb",
+  DB: "WoWDB",
   dialect: "mysql",
   // port: 3306,
   pool: {
