@@ -8,7 +8,7 @@ import axios from "axios";
 import SearchResults from "./SearchResults";
 
 function Edit({ selectedItem, setSelectedItem }) {
-  console.log("asdasd", selectedItem);
+  console.log("Selected Item: ", selectedItem);
   const [searchResults, setSearchResults] = useState([]);
 
   //   useEffect(() => {}, []);
@@ -40,18 +40,17 @@ function Edit({ selectedItem, setSelectedItem }) {
   return (
     <div>
       <div className="container-search">
-        <SearchResults
-          setSelectedItem={setSelectedItem}
-          selectedItem={selectedItem}
-          searchResults={searchResults}
-        />
-
         <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="head">
             <Form.Control
               onChange={(e) => SearchIt(e.target.value)}
               type="email"
               placeholder="Enter item..."
+            />
+            <SearchResults
+              setSelectedItem={setSelectedItem}
+              selectedItem={selectedItem}
+              searchResults={searchResults}
             />
           </Form.Group>
           {/* <SearchResults searchResults={searchResults}></SearchResults> */}

@@ -4,17 +4,46 @@ const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
   console.log("CREATE REQ: ", req.body);
-  if (!req.body.name) {
+  if (!req.body.class) {
     res.status(400).send({
       message: "content cannot be empty!",
     });
     return;
   }
   const item = {
-    name: req.body.name,
-    stats: req.body.stats,
-    flavorText: req.body.flavorText,
-    type: req.body.type,
+    class: req.body.class,
+    specialization: req.body.specialization,
+    phaseNumber: req.body.phaseNumber,
+
+    head: req.body.head,
+    neck: req.body.neck,
+    shoulder: req.body.shoulder,
+    back: req.body.back,
+    chest: req.body.chest,
+    wrist: req.body.wrist,
+    hands: req.body.hands,
+    waist: req.body.waist,
+    legs: req.body.legs,
+    feet: req.body.feet,
+    ring1: req.body.ring1,
+    ring2: req.body.ring2,
+    trinket1: req.body.trinket1,
+    trinket2: req.body.trinket2,
+    mainhand: req.body.mainhand,
+    offhand: req.body.offhand,
+    ranged: req.body.ranged,
+
+    enchantHead: req.body.enchantHead,
+    enchantShoulder: req.body.enchantShoulder,
+    enchantBack: req.body.enchantBack,
+    enchantChest: req.body.enchantChest,
+    enchantWrist: req.body.enchantWrist,
+    enchantHands: req.body.enchantHands,
+    enchantLegs: req.body.enchantLegs,
+    enchantFeet: req.body.enchantFeet,
+    enchantMainhand: req.body.enchantMainhand,
+    enchantOffhand: req.body.enchantOffhand,
+    enchantRanged: req.body.enchantRanged,
   };
 
   console.log("item", item);

@@ -13,11 +13,9 @@ function ClassParams() {
 }
 
 function App() {
-  const [selectedItem, setSelectedItem] = useState("lol");
+  const [selectedItem, setSelectedItem] = useState("");
   const [classSelected, setClassSelected] = useState("");
   const [specSelected, setSpecSelected] = useState("");
-
-  console.log(selectedItem);
 
   return (
     <Routes>

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 
 function SearchResults(props) {
-  console.log("selecteditem", props.selectedItem);
+  // console.log("selecteditem", props.selectedItem);
   function testClick(e, item) {
-    console.log(item);
+    // console.log(item);
     props.setSelectedItem(item);
+    navigator.clipboard.writeText(JSON.stringify(item));
   }
   const items = props.searchResults;
-  console.log("PROP ITEM", items);
+  // console.log("PROP ITEM", items);
 
   return (
     <ul>

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
     },
     phaseNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(255),
       // get: function () {
       //   return JSON.parse(this.getDataValue("value"));
       // },
@@ -19,87 +19,87 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
     },
     neck: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     shoulder: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     back: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     chest: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     wrist: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     hands: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     waist: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     legs: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     feet: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     ring1: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     ring2: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     trinket1: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     trinket2: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     mainhand: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     offhand: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     ranged: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     //
 
     enchantHead: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantShoulder: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantBack: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantChest: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantWrist: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantHands: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantLegs: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantFeet: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantMainhand: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantOffhand: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
     enchantRanged: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.JSON,
     },
   });
   return Gearset;

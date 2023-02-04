@@ -1,0 +1,814 @@
+[
+  { "PRIEST_PHASE_1": "_" },
+
+  {
+    "class": "Priest",
+    "specialization": "Holy",
+    "phaseNumber": 1,
+    "head": {
+      "itemId": 13102,
+      "name": "Cassandra's Grace",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_03.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 6879,
+      "quality": "Rare",
+      "itemLevel": 47,
+      "requiredLevel": 42,
+      "slot": "Head",
+
+      "itemLink": "|cff0070dd|Hitem:13102::::::::::0|h[Cassandra&apos;s Grace]|h|r",
+      "contentPhase": 1,
+      "source": { "category": "Rare Drop", "dropChance": 0.0014 },
+      "uniqueName": "cassandras-grace"
+    },
+    "neck": {
+      "itemId": 13141,
+      "name": "Tooth of Gnarr",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_necklace_09.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 12093,
+      "quality": "Rare",
+      "itemLevel": 63,
+      "requiredLevel": 58,
+      "slot": "Neck",
+
+      "itemLink": "|cff0070dd|Hitem:13141::::::::::0|h[Tooth of Gnarr]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "General Drakkisath",
+        "zone": 1583,
+        "dropChance": 0.2779
+      },
+      "uniqueName": "tooth-of-gnarr"
+    },
+    "shoulder": {
+      "itemId": 13013,
+      "name": "Elder Wizard's Mantle",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_shoulder_14.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 12355,
+      "quality": "Rare",
+      "itemLevel": 56,
+      "requiredLevel": 51,
+      "slot": "Shoulder",
+
+      "itemLink": "|cff0070dd|Hitem:13013::::::::::0|h[Elder Wizard&apos;s Mantle]|h|r",
+      "contentPhase": 1,
+      "source": { "category": "Rare Drop", "dropChance": 0.0192 },
+      "uniqueName": "elder-wizards-mantle"
+    },
+    "back": {
+      "itemId": 13386,
+      "name": "Archivist Cape",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_cape_19.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 15182,
+      "quality": "Rare",
+      "itemLevel": 61,
+      "requiredLevel": 56,
+      "slot": "Back",
+
+      "itemLink": "|cff0070dd|Hitem:13386::::::::::0|h[Archivist Cape]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Archivist Galford",
+        "zone": 2017,
+        "dropChance": 0.2144
+      },
+      "uniqueName": "archivist-cape"
+    },
+    "chest": {
+      "itemId": 14154,
+      "name": "Truefaith Vestments",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_chest_cloth_31.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 27066,
+      "quality": "Epic",
+      "itemLevel": 62,
+      "requiredLevel": 57,
+      "slot": "Chest",
+      "createdBy": [
+        {
+          "amount": [1, 1],
+          "requiredSkill": 300,
+          "category": "Tailoring",
+          "reagents": [
+            { "itemId": 14048, "amount": 12 },
+            { "itemId": 14342, "amount": 10 },
+            { "itemId": 12811, "amount": 4 },
+            { "itemId": 13926, "amount": 4 },
+            { "itemId": 9210, "amount": 10 },
+            { "itemId": 14341, "amount": 2 }
+          ],
+          "recipes": [14512, 29120]
+        }
+      ],
+
+      "itemLink": "|cffa335ee|Hitem:14154::::::::::0|h[Truefaith Vestments]|h|r",
+      "contentPhase": 1,
+      "uniqueName": "truefaith-vestments"
+    },
+    "wrist": {
+      "itemId": 13107,
+      "name": "Magiskull Cuffs",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_bracer_13.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 10528,
+      "quality": "Rare",
+      "itemLevel": 62,
+      "requiredLevel": 57,
+      "slot": "Wrist",
+
+      "itemLink": "|cff0070dd|Hitem:13107::::::::::0|h[Magiskull Cuffs]|h|r",
+      "contentPhase": 1,
+      "source": { "category": "Rare Drop", "dropChance": 0.0243 },
+      "uniqueName": "magiskull-cuffs"
+    },
+    "hands": {
+      "itemId": 12554,
+      "name": "Hands of the Exalted Herald",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_gauntlets_32.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 9474,
+      "quality": "Rare",
+      "itemLevel": 59,
+      "requiredLevel": 54,
+      "slot": "Hands",
+
+      "itemLink": "|cff0070dd|Hitem:12554::::::::::0|h[Hands of the Exalted Herald]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Princess Moira Bronzebeard",
+        "zone": 1584,
+        "dropChance": 0.2328
+      },
+      "uniqueName": "hands-of-the-exalted-herald"
+    },
+    "waist": {
+      "itemId": 14143,
+      "name": "Ghostweave Belt",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_belt_16.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 5763,
+      "quality": "Uncommon",
+      "itemLevel": 53,
+      "requiredLevel": 48,
+      "slot": "Waist",
+      "createdBy": [
+        {
+          "amount": [1, 1],
+          "requiredSkill": 265,
+          "category": "Tailoring",
+          "reagents": [
+            { "itemId": 14048, "amount": 2 },
+            { "itemId": 9210, "amount": 2 }
+          ],
+          "recipes": [14473]
+        }
+      ],
+
+      "itemLink": "|cff1eff00|Hitem:14143::::::::::0|h[Ghostweave Belt]|h|r",
+      "contentPhase": 1,
+      "uniqueName": "ghostweave-belt"
+    },
+    "legs": {
+      "itemId": 11841,
+      "name": "Senior Designer's Pantaloons",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_pants_09.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 15032,
+      "quality": "Rare",
+      "itemLevel": 55,
+      "requiredLevel": 50,
+      "slot": "Legs",
+
+      "itemLink": "|cff0070dd|Hitem:11841::::::::::0|h[Senior Designer&apos;s Pantaloons]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Fineous Darkvire",
+        "zone": 1584,
+        "dropChance": 0.2396
+      },
+      "uniqueName": "senior-designers-pantaloons"
+    },
+    "feet": {
+      "itemId": 11822,
+      "name": "Omnicast Boots",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_boots_05.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 14153,
+      "quality": "Rare",
+      "itemLevel": 59,
+      "requiredLevel": 54,
+      "slot": "Feet",
+
+      "itemLink": "|cff0070dd|Hitem:11822::::::::::0|h[Omnicast Boots]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Golem Lord Argelmach",
+        "zone": 1584,
+        "dropChance": 0.3587
+      },
+      "uniqueName": "omnicast-boots"
+    },
+    "ring1": {
+      "itemId": 16058,
+      "name": "Fordring's Seal",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_19.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 10156,
+      "quality": "Rare",
+      "itemLevel": 63,
+      "requiredLevel": 0,
+      "slot": "Finger",
+
+      "itemLink": "|cff0070dd|Hitem:16058::::::::::0|h[Fordring&apos;s Seal]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Quest",
+        "quests": [{ "questId": 5944, "name": "In Dreams", "faction": "Both" }]
+      },
+      "uniqueName": "fordrings-seal"
+    },
+    "ring2": {
+      "itemId": 13178,
+      "name": "Rosewine Circle",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_22.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 13782,
+      "quality": "Rare",
+      "itemLevel": 60,
+      "requiredLevel": 55,
+      "slot": "Finger",
+
+      "itemLink": "|cff0070dd|Hitem:13178::::::::::0|h[Rosewine Circle]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Urok Doomhowl",
+        "zone": 1583,
+        "dropChance": 0.1936
+      },
+      "uniqueName": "rosewine-circle"
+    },
+    "trinket1": {
+      "itemId": 11819,
+      "name": "Second Wind",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_talisman_06.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 10000,
+      "quality": "Rare",
+      "itemLevel": 59,
+      "requiredLevel": 54,
+      "slot": "Trinket",
+
+      "itemLink": "|cff0070dd|Hitem:11819::::::::::0|h[Second Wind]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Golem Lord Argelmach",
+        "zone": 1584,
+        "dropChance": 0.09
+      },
+      "uniqueName": "second-wind"
+    },
+    "trinket2": {
+      "itemId": 12930,
+      "name": "Briarwood Reed",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_root_02.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 10000,
+      "quality": "Rare",
+      "itemLevel": 60,
+      "requiredLevel": 55,
+      "slot": "Trinket",
+
+      "itemLink": "|cff0070dd|Hitem:12930::::::::::0|h[Briarwood Reed]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Jed Runewatcher",
+        "zone": 1583,
+        "dropChance": 0.3032
+      },
+      "uniqueName": "briarwood-reed"
+    },
+    "mainhand": {
+      "itemId": 11923,
+      "name": "The Hammer of Grace",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_hammer_07.jpg",
+      "class": "Weapon",
+      "subclass": "Mace",
+      "sellPrice": 43649,
+      "quality": "Rare",
+      "itemLevel": 57,
+      "requiredLevel": 52,
+      "slot": "Main Hand",
+
+      "itemLink": "|cff0070dd|Hitem:11923::::::::::0|h[The Hammer of Grace]|h|r",
+      "contentPhase": 1,
+      "uniqueName": "the-hammer-of-grace"
+    },
+    "offhand": {
+      "itemId": 11928,
+      "name": "Thaurissan's Royal Scepter",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_mace_13.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 22045,
+      "quality": "Rare",
+      "itemLevel": 60,
+      "requiredLevel": 55,
+      "slot": "Held In Off-hand",
+
+      "itemLink": "|cff0070dd|Hitem:11928::::::::::0|h[Thaurissan&apos;s Royal Scepter]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Emperor Dagran Thaurissan",
+        "zone": 1584,
+        "dropChance": 0.1844
+      },
+      "uniqueName": "thaurissans-royal-scepter"
+    },
+    "ranged": {
+      "itemId": 16997,
+      "name": "Stormrager",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_wand_05.jpg",
+      "class": "Weapon",
+      "subclass": "Wand",
+      "sellPrice": 38790,
+      "quality": "Rare",
+      "itemLevel": 62,
+      "requiredLevel": 0,
+      "slot": "Ranged",
+
+      "itemLink": "|cff0070dd|Hitem:16997::::::::::0|h[Stormrager]|h|r",
+      "contentPhase": 1,
+
+      "uniqueName": "stormrager"
+    },
+
+    "enchantHead": {},
+    "enchantShoulder": {
+      "itemId": 18182,
+      "name": "Chromatic Mantle of the Dawn",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_gem_variety_02.jpg",
+      "class": "Quest",
+      "subclass": "Quest",
+      "sellPrice": 100000,
+      "quality": "Uncommon",
+      "itemLevel": 60,
+      "requiredLevel": 50,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cff1eff00|Hitem:18182::::::::::0|h[Chromatic Mantle of the Dawn]|h|r",
+      "vendorPrice": 384762,
+
+      "uniqueName": "chromatic-mantle-of-the-dawn"
+    },
+    "enchantBack": {
+      "itemId": 38858,
+      "name": "Scroll of Enchant Cloak - Greater Resistance",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 53,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38858::::::::::0|h[Scroll of Enchant Cloak - Greater Resistance]|h|r",
+      "uniqueName": "scroll-of-enchant-cloak---greater-resistance"
+    },
+    "enchantChest": {
+      "itemId": 38865,
+      "name": "Scroll of Enchant Chest - Greater Stats",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 62,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38865::::::::::0|h[Scroll of Enchant Chest - Greater Stats]|h|r",
+      "uniqueName": "scroll-of-enchant-chest---greater-stats"
+    },
+    "enchantWrist": {
+      "itemId": 38853,
+      "name": "Scroll of Enchant Bracer - Superior Spirit",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 54,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38853::::::::::0|h[Scroll of Enchant Bracer - Superior Spirit]|h|r",
+      "uniqueName": "scroll-of-enchant-bracer---superior-spirit"
+    },
+    "enchantHands": {},
+    "enchantLegs": {},
+    "enchantFeet": {
+      "itemId": 38837,
+      "name": "Scroll of Enchant Boots - Minor Speed",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 45,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+      "itemLink": "|cffffffff|Hitem:38837::::::::::0|h[Scroll of Enchant Boots - Minor Speed]|h|r",
+      "uniqueName": "scroll-of-enchant-boots---minor-speed"
+    },
+    "enchantMainhand": {},
+    "enchantOffhand": {},
+    "enchantRanged": {}
+  },
+  {
+    "class": "Priest",
+    "specialization": "Holy",
+    "phaseNumber": 2,
+    "head": {},
+    "neck": {},
+    "shoulder": {},
+    "back": {},
+    "chest": {},
+    "wrist": {},
+    "hands": {},
+    "waist": {},
+    "legs": {},
+    "feet": {},
+    "ring1": {},
+    "ring2": {},
+    "trinket1": {},
+    "trinket2": {},
+    "mainhand": {},
+    "offhand": {},
+    "ranged": {},
+
+    "enchantHead": {},
+    "enchantShoulder": {},
+    "enchantBack": {},
+  
+    "enchantChest":  {},
+    "enchantWrist":  {},
+    "enchantHands":  {},
+    "enchantLegs":  {},
+    "enchantFeet":  {},
+    "enchantMainhand": {},
+    "enchantOffhand": {},
+    "enchantRanged": {}
+  }, {
+    "class": "Priest",
+    "specialization": "Holy",
+    "phaseNumber": 2,
+    "head": {
+      "itemId": 13102,
+      "name": "Cassandra's Grace",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_03.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 6879,
+      "quality": "Rare",
+      "itemLevel": 47,
+      "requiredLevel": 42,
+      "slot": "Head",
+
+      "itemLink": "|cff0070dd|Hitem:13102::::::::::0|h[Cassandra&apos;s Grace]|h|r",
+      "contentPhase": 1,
+      "source": { "category": "Rare Drop", "dropChance": 0.0014 },
+      "uniqueName": "cassandras-grace"
+    },
+    "neck": {
+      "itemId": 13141,
+      "name": "Tooth of Gnarr",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_necklace_09.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 12093,
+      "quality": "Rare",
+      "itemLevel": 63,
+      "requiredLevel": 58,
+      "slot": "Neck",
+
+      "itemLink": "|cff0070dd|Hitem:13141::::::::::0|h[Tooth of Gnarr]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "General Drakkisath",
+        "zone": 1583,
+        "dropChance": 0.2779
+      },
+      "uniqueName": "tooth-of-gnarr"
+    },
+    "shoulder": {
+      "itemId": 13013,
+      "name": "Elder Wizard's Mantle",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_shoulder_14.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 12355,
+      "quality": "Rare",
+      "itemLevel": 56,
+      "requiredLevel": 51,
+      "slot": "Shoulder",
+
+      "itemLink": "|cff0070dd|Hitem:13013::::::::::0|h[Elder Wizard&apos;s Mantle]|h|r",
+      "contentPhase": 1,
+      "source": { "category": "Rare Drop", "dropChance": 0.0192 },
+      "uniqueName": "elder-wizards-mantle"
+    },
+    "back": {"itemId":18510,"name":"Hide of the Wild","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_cape_01.jpg","class":"Armor","subclass":"Cloth","sellPrice":19477,"quality":"Epic","itemLevel":62,"requiredLevel":57,"slot":"Back","createdBy":[{"amount":[1,1],"requiredSkill":300,"category":"Leatherworking","reagents":[{"itemId":8170,"amount":30},{"itemId":18512,"amount":5},{"itemId":15407,"amount":2},{"itemId":14341,"amount":2}],"recipes":[18518]}],"tooltip":[{"label":"Hide of the Wild"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 62","format":"Misc"},{"label":"Binds when equipped"},{"label":"Back"},{"label":"55 Armor"},{"label":"+8 Stamina"},{"label":"+10 Intellect"},{"label":"Requires Level 57"},{"label":"Equip: Increases spell power by 22.","format":"Uncommon"},{"label":"Sell Price:"}],"itemLink":"|cffa335ee|Hitem:18510::::::::::0|h[Hide of the Wild]|h|r","contentPhase":1,"uniqueName":"hide-of-the-wild"},
+    "chest": {
+      "itemId": 14154,
+      "name": "Truefaith Vestments",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_chest_cloth_31.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 27066,
+      "quality": "Epic",
+      "itemLevel": 62,
+      "requiredLevel": 57,
+      "slot": "Chest",
+      "createdBy": [
+        {
+          "amount": [1, 1],
+          "requiredSkill": 300,
+          "category": "Tailoring",
+          "reagents": [
+            { "itemId": 14048, "amount": 12 },
+            { "itemId": 14342, "amount": 10 },
+            { "itemId": 12811, "amount": 4 },
+            { "itemId": 13926, "amount": 4 },
+            { "itemId": 9210, "amount": 10 },
+            { "itemId": 14341, "amount": 2 }
+          ],
+          "recipes": [14512, 29120]
+        }
+      ],
+
+      "itemLink": "|cffa335ee|Hitem:14154::::::::::0|h[Truefaith Vestments]|h|r",
+      "contentPhase": 1,
+      "uniqueName": "truefaith-vestments"
+    },
+    "wrist": {"itemId":18497,"name":"Sublime Wristguards","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_bracer_13.jpg","class":"Armor","subclass":"Cloth","sellPrice":9731,"quality":"Rare","itemLevel":60,"requiredLevel":55,"slot":"Wrist","tooltip":[{"label":"Sublime Wristguards"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 60","format":"Misc"},{"label":"Binds when picked up"},{"label":"Wrist"},{"label":"Cloth","format":"alignRight"},{"label":"37 Armor"},{"label":"+6 Stamina"},{"label":"+10 Intellect"},{"label":"+6 Spirit"},{"label":"Durability 30 / 30"},{"label":"Requires Level 55"},{"label":"Equip: Increases spell power by 12.","format":"Uncommon"},{"label":"Sell Price:"}],"itemLink":"|cff0070dd|Hitem:18497::::::::::0|h[Sublime Wristguards]|h|r","contentPhase":1,"source":{"category":"Zone Drop","zone":2557,"dropChance":0.0586},"uniqueName":"sublime-wristguards"},
+    "hands": {
+      "itemId": 12554,
+      "name": "Hands of the Exalted Herald",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_gauntlets_32.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 9474,
+      "quality": "Rare",
+      "itemLevel": 59,
+      "requiredLevel": 54,
+      "slot": "Hands",
+
+      "itemLink": "|cff0070dd|Hitem:12554::::::::::0|h[Hands of the Exalted Herald]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Princess Moira Bronzebeard",
+        "zone": 1584,
+        "dropChance": 0.2328
+      },
+      "uniqueName": "hands-of-the-exalted-herald"
+    },
+    "waist": {"itemId":18327,"name":"Whipvine Cord","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_belt_17.jpg","class":"Armor","subclass":"Cloth","sellPrice":9376,"quality":"Rare","itemLevel":59,"requiredLevel":54,"slot":"Waist","tooltip":[{"label":"Whipvine Cord"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 59","format":"Misc"},{"label":"Binds when picked up"},{"label":"Waist"},{"label":"Cloth","format":"alignRight"},{"label":"47 Armor"},{"label":"+9 Intellect"},{"label":"Durability 30 / 30"},{"label":"Requires Level 54"},{"label":"Equip: Restores 8 mana per 5 sec.","format":"Uncommon"},{"label":"Equip: Increases spell power by 16.","format":"Uncommon"},{"label":"Sell Price:"},{"label":"Dropped by: Alzzin the Wildshaper"},{"label":"Drop Chance: 18.72%"}],"itemLink":"|cff0070dd|Hitem:18327::::::::::0|h[Whipvine Cord]|h|r","contentPhase":1,"source":{"category":"Boss Drop","name":"Alzzin the Wildshaper","zone":2557,"dropChance":0.1872},"uniqueName":"whipvine-cord"},
+    "legs": {
+      "itemId": 11841,
+      "name": "Senior Designer's Pantaloons",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_pants_09.jpg",
+      "class": "Armor",
+      "subclass": "Cloth",
+      "sellPrice": 15032,
+      "quality": "Rare",
+      "itemLevel": 55,
+      "requiredLevel": 50,
+      "slot": "Legs",
+
+      "itemLink": "|cff0070dd|Hitem:11841::::::::::0|h[Senior Designer&apos;s Pantaloons]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Fineous Darkvire",
+        "zone": 1584,
+        "dropChance": 0.2396
+      },
+      "uniqueName": "senior-designers-pantaloons"
+    },
+    "feet": {"itemId":18507,"name":"Boots of the Full Moon","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_boots_05.jpg","class":"Armor","subclass":"Cloth","sellPrice":15974,"quality":"Rare","itemLevel":62,"requiredLevel":57,"slot":"Feet","tooltip":[{"label":"Boots of the Full Moon"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 62","format":"Misc"},{"label":"Binds when picked up"},{"label":"Feet"},{"label":"Cloth","format":"alignRight"},{"label":"60 Armor"},{"label":"+12 Stamina"},{"label":"+12 Intellect"},{"label":"+9 Spirit"},{"label":"Durability 40 / 40"},{"label":"Requires Level 57"},{"label":"Equip: Increases spell power by 14.","format":"Uncommon"},{"label":"Sell Price:"},{"label":"Dropped by: Captain Kromcrush"},{"label":"Drop Chance: 22.70%"}],"itemLink":"|cff0070dd|Hitem:18507::::::::::0|h[Boots of the Full Moon]|h|r","contentPhase":1,"source":{"category":"Boss Drop","name":"Captain Kromcrush","zone":2557,"dropChance":0.227},"uniqueName":"boots-of-the-full-moon"},
+    "ring1": {
+      "itemId": 16058,
+      "name": "Fordring's Seal",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_19.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 10156,
+      "quality": "Rare",
+      "itemLevel": 63,
+      "requiredLevel": 0,
+      "slot": "Finger",
+
+      "itemLink": "|cff0070dd|Hitem:16058::::::::::0|h[Fordring&apos;s Seal]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Quest",
+        "quests": [{ "questId": 5944, "name": "In Dreams", "faction": "Both" }]
+      },
+      "uniqueName": "fordrings-seal"
+    },
+    "ring2": {
+      "itemId": 13178,
+      "name": "Rosewine Circle",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_ring_22.jpg",
+      "class": "Armor",
+      "subclass": "Miscellaneous",
+      "sellPrice": 13782,
+      "quality": "Rare",
+      "itemLevel": 60,
+      "requiredLevel": 55,
+      "slot": "Finger",
+
+      "itemLink": "|cff0070dd|Hitem:13178::::::::::0|h[Rosewine Circle]|h|r",
+      "contentPhase": 1,
+      "source": {
+        "category": "Boss Drop",
+        "name": "Urok Doomhowl",
+        "zone": 1583,
+        "dropChance": 0.1936
+      },
+      "uniqueName": "rosewine-circle"
+    },
+    "trinket1": {"itemId":18466,"name":"Royal Seal of Eldre'Thalas","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_jewelry_talisman_10.jpg","class":"Armor","subclass":"Miscellaneous","sellPrice":0,"quality":"Rare","itemLevel":62,"requiredLevel":0,"slot":"Trinket","tooltip":[{"label":"Royal Seal of Eldre'Thalas"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 62","format":"Misc"},{"label":"Binds when picked up"},{"label":"Unique"},{"label":"Trinket"},{"label":"+10 Fire Resistance"},{"label":"Classes: Warrior"},{"label":"Equip: +200 Armor.","format":"Uncommon"},{"label":"\"Blessed by the Shen'dralar Ancients.\"","format":"Misc"}],"itemLink":"|cff0070dd|Hitem:18466::::::::::0|h[Royal Seal of Eldre&apos;Thalas]|h|r","contentPhase":1,"source":{"category":"Quest","quests":[{"questId":7499,"name":"Codex of Defense","faction":"Both"}]},"uniqueName":"royal-seal-of-eldrethalas-18466"},
+    "trinket2": {"itemId":18371,"name":"Mindtap Talisman","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_battery_02.jpg","class":"Armor","subclass":"Miscellaneous","sellPrice":20737,"quality":"Rare","itemLevel":61,"requiredLevel":56,"slot":"Trinket","tooltip":[{"label":"Mindtap Talisman"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 61","format":"Misc"},{"label":"Binds when picked up"},{"label":"Trinket"},{"label":"Requires Level 56"},{"label":"Equip: Restores 14 mana per 5 sec.","format":"Uncommon"},{"label":"Sell Price:"},{"label":"Dropped by: Magister Kalendris"},{"label":"Drop Chance: 8.71%"}],"itemLink":"|cff0070dd|Hitem:18371::::::::::0|h[Mindtap Talisman]|h|r","contentPhase":1,"source":{"category":"Boss Drop","name":"Magister Kalendris","zone":2557,"dropChance":0.0871},"uniqueName":"mindtap-talisman"},
+    "mainhand": {
+      "itemId": 11923,
+      "name": "The Hammer of Grace",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_hammer_07.jpg",
+      "class": "Weapon",
+      "subclass": "Mace",
+      "sellPrice": 43649,
+      "quality": "Rare",
+      "itemLevel": 57,
+      "requiredLevel": 52,
+      "slot": "Main Hand",
+
+      "itemLink": "|cff0070dd|Hitem:11923::::::::::0|h[The Hammer of Grace]|h|r",
+      "contentPhase": 1,
+      "uniqueName": "the-hammer-of-grace"
+    },
+    "offhand": {"itemId":18523,"name":"Brightly Glowing Stone","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_orb_01.jpg","class":"Armor","subclass":"Miscellaneous","sellPrice":3481,"quality":"Rare","itemLevel":63,"requiredLevel":58,"slot":"Held In Off-hand","tooltip":[{"label":"Brightly Glowing Stone"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 63","format":"Misc"},{"label":"Binds when picked up"},{"label":"Held In Off-hand"},{"label":"+7 Stamina"},{"label":"Requires Level 58"},{"label":"Equip: Increases spell power by 20.","format":"Uncommon"},{"label":"Sell Price:"},{"label":"Dropped by: King Gordok"},{"label":"Drop Chance: 24.07%"}],"itemLink":"|cff0070dd|Hitem:18523::::::::::0|h[Brightly Glowing Stone]|h|r","contentPhase":1,"source":{"category":"Boss Drop","name":"King Gordok","zone":2557,"dropChance":0.2407},"uniqueName":"brightly-glowing-stone"},
+    "ranged": {"itemId":18483,"name":"Mana Channeling Wand","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_wand_05.jpg","class":"Weapon","subclass":"Wand","sellPrice":37839,"quality":"Rare","itemLevel":61,"requiredLevel":56,"slot":"Ranged","tooltip":[{"label":"Mana Channeling Wand"},{"label":"Phase 1","format":"alignRight"},{"label":"Item Level 61","format":"Misc"},{"label":"Binds when picked up"},{"label":"Ranged"},{"label":"Wand","format":"alignRight"},{"label":"68 - 127 Frost Damage"},{"label":"Speed 1.60","format":"alignRight"},{"label":"(60.94 damage per second)"},{"label":"Durability 65 / 65"},{"label":"Requires Level 56"},{"label":"Equip: Restores 5 mana per 5 sec.","format":"Uncommon"},{"label":"Sell Price:"},{"label":"Dropped by: Cho'Rush the Observer"},{"label":"Drop Chance: 42.53%"}],"itemLink":"|cff0070dd|Hitem:18483::::::::::0|h[Mana Channeling Wand]|h|r","contentPhase":1,"source":{"category":"Boss Drop","name":"Cho'Rush the Observer","zone":2557,"dropChance":0.4253},"uniqueName":"mana-channeling-wand"},
+
+    "enchantHead": {"itemId":18330,"name":"Arcanum of Focus","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_gem_02.jpg","class":"Quest","subclass":"Quest","sellPrice":0,"quality":"Uncommon","itemLevel":60,"requiredLevel":50,"slot":"Non-equippable","tooltip":[{"label":"Arcanum of Focus","format":"Uncommon"},{"label":"Item Level 60","format":"Misc"},{"label":"Binds when picked up"},{"label":"Requires Level 50"},{"label":"Use: Permanently adds 8 spell power to a leg or head slot item.\n\nEnchanting the item causes it to become soulbound.","format":"Uncommon"}],"itemLink":"|cff1eff00|Hitem:18330::::::::::0|h[Arcanum of Focus]|h|r","source":{"category":"Quest","quests":[{"questId":7484,"name":"Libram of Focus","faction":"Both"}]},"uniqueName":"arcanum-of-focus"},
+    "enchantShoulder": {
+      "itemId": 18182,
+      "name": "Chromatic Mantle of the Dawn",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_gem_variety_02.jpg",
+      "class": "Quest",
+      "subclass": "Quest",
+      "sellPrice": 100000,
+      "quality": "Uncommon",
+      "itemLevel": 60,
+      "requiredLevel": 50,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cff1eff00|Hitem:18182::::::::::0|h[Chromatic Mantle of the Dawn]|h|r",
+      "vendorPrice": 384762,
+
+      "uniqueName": "chromatic-mantle-of-the-dawn"
+    },
+    "enchantBack": {
+      "itemId": 38858,
+      "name": "Scroll of Enchant Cloak - Greater Resistance",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 53,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38858::::::::::0|h[Scroll of Enchant Cloak - Greater Resistance]|h|r",
+      "uniqueName": "scroll-of-enchant-cloak---greater-resistance"
+    },
+    "enchantChest": {
+      "itemId": 38865,
+      "name": "Scroll of Enchant Chest - Greater Stats",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 62,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38865::::::::::0|h[Scroll of Enchant Chest - Greater Stats]|h|r",
+      "uniqueName": "scroll-of-enchant-chest---greater-stats"
+    },
+    "enchantWrist": {
+      "itemId": 38853,
+      "name": "Scroll of Enchant Bracer - Superior Spirit",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 54,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+
+      "itemLink": "|cffffffff|Hitem:38853::::::::::0|h[Scroll of Enchant Bracer - Superior Spirit]|h|r",
+      "uniqueName": "scroll-of-enchant-bracer---superior-spirit"
+    },
+    "enchantHands": {},
+    "enchantLegs": {"itemId":18330,"name":"Arcanum of Focus","icon":"https://render-classic-us.worldofwarcraft.com/icons/56/inv_misc_gem_02.jpg","class":"Quest","subclass":"Quest","sellPrice":0,"quality":"Uncommon","itemLevel":60,"requiredLevel":50,"slot":"Non-equippable","tooltip":[{"label":"Arcanum of Focus","format":"Uncommon"},{"label":"Item Level 60","format":"Misc"},{"label":"Binds when picked up"},{"label":"Requires Level 50"},{"label":"Use: Permanently adds 8 spell power to a leg or head slot item.\n\nEnchanting the item causes it to become soulbound.","format":"Uncommon"}],"itemLink":"|cff1eff00|Hitem:18330::::::::::0|h[Arcanum of Focus]|h|r","source":{"category":"Quest","quests":[{"questId":7484,"name":"Libram of Focus","faction":"Both"}]},"uniqueName":"arcanum-of-focus"},
+    "enchantFeet": {
+      "itemId": 38837,
+      "name": "Scroll of Enchant Boots - Minor Speed",
+      "icon": "https://render-classic-us.worldofwarcraft.com/icons/56/inv_scroll_03.jpg",
+      "class": "Consumable",
+      "subclass": "Item Enhancement",
+      "sellPrice": 0,
+      "quality": "Common",
+      "itemLevel": 45,
+      "requiredLevel": 0,
+      "slot": "Non-equippable",
+      "itemLink": "|cffffffff|Hitem:38837::::::::::0|h[Scroll of Enchant Boots - Minor Speed]|h|r",
+      "uniqueName": "scroll-of-enchant-boots---minor-speed"
+    },
+    "enchantMainhand": {},
+    "enchantOffhand": {},
+    "enchantRanged": {}
+  }
+]
+
+
+
+
+BLANK TEMPLATE
+{
+    "class": "",
+    "specialization": "",
+    "phaseNumber": 1,
+    "head": {},
+    "neck": {},
+    "shoulder": {},
+    "back": {},
+    "chest": {},
+    "wrist": {},
+    "hands": {},
+    "waist": {},
+    "legs": {},
+    "feet": {},
+    "ring1": {},
+    "ring2": {},
+    "trinket1": {},
+    "trinket2": {},
+    "mainhand": {},
+    "offhand": {},
+    "ranged": {},
+
+    "enchantHead": {},
+    "enchantShoulder": {},
+    "enchantBack": {},
+  
+    "enchantChest":  {},
+    "enchantWrist":  {},
+    "enchantHands":  {},
+    "enchantLegs":  {},
+    "enchantFeet":  {},
+    "enchantMainhand": {},
+    "enchantOffhand": {},
+    "enchantRanged": {}
+  }
