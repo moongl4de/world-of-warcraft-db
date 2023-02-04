@@ -68,9 +68,19 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  const query = req.params.id;
-  console.log(query);
-  Gearset.findOne({ where: { id: `${query}` } })
+  const query = req.params;
+  const className = req.params.class;
+  const spec = req.params.spec;
+  const phase = req.params.phase;
+
+  console.log("query", query);
+  Gearset.findOne({
+    where: [
+      { class: `${className}` },
+      { specialization: `${spec}` },
+      { phaseNumber: `${phase}` },
+    ],
+  })
     .then((data) => {
       res.send(data);
     })

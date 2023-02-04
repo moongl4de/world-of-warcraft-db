@@ -8,7 +8,7 @@ module.exports = (app) => {
 
   router.get("/", gearset.findAll);
 
-  router.get("/:id", gearset.findOne);
+  router.get("/:class/:spec/:phase", gearset.findOne);
 
   router.put("/:id", gearset.update);
 
