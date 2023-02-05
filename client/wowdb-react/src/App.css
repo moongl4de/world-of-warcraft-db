@@ -5,32 +5,9 @@ html {
   padding: 0;
 }
 
-@media screen and (max-width: 944px) {
-  .rightSquare {
-    position: relative;
-    left: 8%;
-  }
-}
-
-@media screen and (max-width: 502px) {
-  .itemSquare,
-  .blank,
-  .enchant {
-    /* background-color: lightgreen; */
-    margin: 0;
-  }
-
-  .backgroundOverlay {
-    padding: 0 !important;
-    margin: 0 !important;
-    /* background-color: red !important;
-    width: 100% !important; */
-    width: 99% !important;
-  }
-  .row {
-    padding: 0;
-    margin: 0;
-  }
+.specHeader {
+  text-align: left;
+  padding-top: 15px;
 }
 
 body {
@@ -151,8 +128,8 @@ body {
 .specBtn {
   background-color: rgba(27, 27, 27, 0.466) !important;
   border: 1px solid black;
-  height: 40px;
-  width: 115px;
+  height: 2rem;
+  width: 8rem;
   margin: 2px;
   color: white;
   font-size: 16px;
@@ -166,6 +143,26 @@ body {
 .rightSquare {
   position: relative;
   right: 50%;
+}
+
+.specActive {
+  border: 1px solid white;
+}
+
+.phaseBtn {
+  background-color: rgba(0, 0, 0, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.178);
+  color: white;
+  margin: auto;
+  width: 2rem;
+  font-size: 22px;
+}
+
+.phaseBtn:hover {
+  background-color: rgb(61, 61, 61);
+  border: 1px solid rgba(255, 255, 255, 0.945);
+  color: white;
+  margin: auto;
 }
 
 .specBtn:active,
@@ -393,5 +390,40 @@ ul {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 944px) {
+  .rightSquare {
+    position: relative;
+    left: 8%;
+  }
+
+  .specHeader {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .itemSquare,
+  .blank,
+  .enchant {
+    /* background-color: lightgreen; */
+    margin: 0;
+  }
+  .specHeader {
+    text-align: center;
+  }
+
+  .backgroundOverlay {
+    padding: 0 !important;
+    margin: 0 !important;
+    /* background-color: red !important;
+    width: 100% !important; */
+    width: 99% !important;
+  }
+  .row {
+    padding: 0;
+    margin: 0;
   }
 }

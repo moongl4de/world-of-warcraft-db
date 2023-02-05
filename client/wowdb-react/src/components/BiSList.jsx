@@ -12,6 +12,7 @@ import { useNavigate, Link, useParams } from "react-router-dom";
 import Item from "../components/Item";
 import Enchant from "../components/Enchant";
 import priestIcon from "../assets/icon-priest.webp";
+import FormCheckInput from "react-bootstrap/esm/FormCheckInput";
 
 const params = new URLSearchParams(window.location.pathname);
 
@@ -20,6 +21,7 @@ function BiSList({ setClassSelected, classSelected }) {
 
   const [isSpecSelected, setSpecSelected] = useState(false);
   const [selectedSpec, setSelectedSpec] = useState("");
+  const [selectedPhase, setSelectedPhase] = useState("");
 
   const [apiResults, setApiResults] = useState({});
 
@@ -31,46 +33,91 @@ function BiSList({ setClassSelected, classSelected }) {
     }
   }, []);
 
-  function getGearset(e, spec) {
+  function handleSpecSelect(e, spec) {
     e.preventDefault();
     console.log("..");
 
-    console.log("selected!", isSpecSelected);
     setSelectedSpec(spec);
+    console.log(selectedSpec);
+  }
 
-    //
-    console.log("Selected Spec: ", spec);
-    //
-    console.log("..");
+  function getGearset(e, phase) {
+    if (selectedSpec) {
+      e.preventDefault();
+      console.log("..");
 
-    let searchResults = [];
+      let spec = selectedSpec;
+      console.log("SPEC AND PHASE", spec, phase);
 
-    // var data = JSON.stringify({
-    //   name: value,
-    // });
-    var config = {
-      method: "get",
-      url: `http://localhost:9000/api/gearset/${classSelected}/${spec}/1`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // data: data,
-    };
+      //
+      console.log("Selected Spec: ", phase);
+      //
+      console.log("..");
 
-    console.log("API CONFIG: ", config);
+      let searchResults = [];
 
-    axios(config)
-      .then((response) => {
-        searchResults = response.data;
-        console.log(searchResults);
-        setApiResults(searchResults);
-        setSpecSelected(true);
+      // var data = JSON.stringify({
+      //   name: value,
+      // });
+      var config = {
+        method: "get",
+        url: `http://localhost:9000/api/gearset/${classSelected}/${spec}/${phase}`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // data: data,
+      };
 
-        console.log("api res", apiResults);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      console.log("API CONFIG: ", config);
+
+      axios(config)
+        .then((response) => {
+          searchResults = response.data;
+          console.log(searchResults);
+          setApiResults(searchResults);
+          setSpecSelected(true);
+
+          console.log("api res", apiResults);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      alert("Please select a specialization & phase.");
+    }
+  }
+
+  function Phases() {
+    return (
+      <Row style={{ margin: 0, padding: 0 }}>
+        <div className=" ">
+          <i style={{ fontSize: "14px", color: "lightgrey" }}>
+            Select a phase:
+          </i>
+          <br />
+          <div className="d-inline-flex">
+            <button onClick={(e) => getGearset(e, 1)} className=" phaseBtn">
+              1
+            </button>
+            <button onClick={(e) => getGearset(e, 2)} className="phaseBtn">
+              2
+            </button>
+            <button onClick={(e) => getGearset(e, 3)} className="phaseBtn">
+              3
+            </button>
+            <button onClick={(e) => getGearset(e, 4)} className="phaseBtn">
+              4
+            </button>
+            <button onClick={(e) => getGearset(e, 5)} className="phaseBtn">
+              5
+            </button>
+            <button onClick={(e) => getGearset(e, 6)} className="phaseBtn">
+              6
+            </button>
+          </div>
+        </div>
+      </Row>
+    );
   }
 
   function Specs() {
@@ -111,15 +158,15 @@ function BiSList({ setClassSelected, classSelected }) {
             <Col></Col>
             <Col></Col>
             <Col></Col>
-            <Col sm={12}>
+            <Col sm={12} md={12}>
               <button
-                onClick={(e) => getGearset(e, "Holy")}
+                onClick={(e) => handleSpecSelect(e, "Holy")}
                 className="specBtn"
               >
                 Holy
               </button>
             </Col>
-            <Col sm={12}>
+            <Col sm={12} md={12}>
               <button className="specBtn">Shadow</button>
             </Col>
             <Col></Col>
@@ -200,14 +247,22 @@ function BiSList({ setClassSelected, classSelected }) {
       <div className="App">
         <header className="App-header">
           <div className="backgroundOverlay ">
-            {" "}
-            <h1>
-              {selectedSpec} {classSelectedURL}
-            </h1>
-            <p style={{ fontSize: "14px" }}>
-              <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
-            </p>
-            <Specs />
+            <Row>
+              <Col sm={12} md={4}>
+                <h1 className="specHeader">
+                  {selectedSpec} {classSelectedURL}
+                </h1>
+              </Col>
+              <Col sm={12} md={4}>
+                {" "}
+                <Specs style={{ textAlign: "left" }} />
+              </Col>
+              <Col sm={12} md={4}>
+                {" "}
+                <Phases />
+              </Col>
+            </Row>
+
             <br />
             <br />
             <Row style={{ margin: "0", padding: "0" }}>
@@ -718,12 +773,14 @@ function BiSList({ setClassSelected, classSelected }) {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>{classSelectedURL}</h1>
           <div className="backgroundOverlay ">
+            {" "}
+            <h1>{classSelectedURL}</h1>
             <p style={{ fontSize: "14px" }}>
               <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
             </p>
             <Specs setSpecSelected={setSpecSelected} />
+            <Phases />
             <br />
             <br />
           </div>

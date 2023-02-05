@@ -1,6 +1,9 @@
 function Item(props) {
   return (
-    <a target="_blank" href={`https://www.wowhead.com/item=${props.itemId}`}>
+    <a
+      target="_blank"
+      href={`https://www.wowhead.com/classic/item=${props.itemId}`}
+    >
       <img className={`bisIcon ${props.rarity}`} src={props.iconURL}></img>
     </a>
   );
