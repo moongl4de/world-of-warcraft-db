@@ -74,6 +74,7 @@ exports.findOne = (req, res) => {
   const phase = req.params.phase;
 
   console.log("query", query);
+
   Gearset.findOne({
     where: [
       { class: `${className}` },

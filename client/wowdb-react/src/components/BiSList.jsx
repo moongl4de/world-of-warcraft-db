@@ -1,6 +1,5 @@
 import Form from "react-bootstrap/Form";
 import { useState, setState, useEffect } from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -17,6 +16,9 @@ const params = new URLSearchParams(window.location.pathname);
 
 function BiSList({ setClassSelected, classSelected }) {
   const { classSelectedURL } = useParams();
+
+  const [isSpecSelected, setSpecSelected] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     // Update the document title using the browser API
@@ -24,6 +26,44 @@ function BiSList({ setClassSelected, classSelected }) {
       navigate("/");
     }
   }, []);
+
+  function getGearset(e, spec) {
+    e.preventDefault();
+    console.log("..");
+
+    setSpecSelected(true);
+    console.log("selected!", isSpecSelected);
+
+    //
+    console.log("Selected Spec: ", spec);
+    //
+    console.log("..");
+
+    let searchResults = [];
+
+    // var data = JSON.stringify({
+    //   name: value,
+    // });
+    var config = {
+      method: "get",
+      url: `http://localhost:9000/api/gearset/${classSelected}/${spec}/1`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // data: data,
+    };
+
+    console.log("API CONFIG: ", config);
+
+    axios(config)
+      .then(function (response) {
+        searchResults = response;
+        console.log(searchResults);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   function Specs() {
     switch (classSelectedURL) {
@@ -35,10 +75,20 @@ function BiSList({ setClassSelected, classSelected }) {
             <Col></Col>
             <Col></Col>
             <Col sm={12} md={2} lg={2}>
-              <button className="specBtn">Protection</button>
+              <button
+                onClick={(e) => getGearset(e, "Protection")}
+                className="specBtn"
+              >
+                Protection
+              </button>
             </Col>
             <Col sm={12} md={2} lg={2}>
-              <button className="specBtn">Fury</button>
+              <button
+                onClick={(e) => getGearset(e, "Fury")}
+                className="specBtn"
+              >
+                Fury
+              </button>
             </Col>
             <Col></Col>
             <Col></Col>
@@ -48,13 +98,18 @@ function BiSList({ setClassSelected, classSelected }) {
         );
       case "Priest":
         return (
-          <Row class="justify-content-between">
+          <Row className="justify-content-between">
             <Col></Col>
             <Col></Col>
             <Col></Col>
             <Col></Col>
             <Col sm={12}>
-              <button className="specBtn">Holy</button>
+              <button
+                onClick={(e) => getGearset(e, "Holy")}
+                className="specBtn"
+              >
+                Holy
+              </button>
             </Col>
             <Col sm={12}>
               <button className="specBtn">Shadow</button>
@@ -67,7 +122,7 @@ function BiSList({ setClassSelected, classSelected }) {
         );
       case "Paladin":
         return (
-          <Row class="justify-content-between">
+          <Row className="justify-content-between">
             <Col></Col>
             <Col></Col>
             <Col></Col>
@@ -89,7 +144,7 @@ function BiSList({ setClassSelected, classSelected }) {
         );
       case "Druid":
         return (
-          <Row class="justify-content-between">
+          <Row className="justify-content-between">
             <Col></Col>
             <Col></Col>
             <Col></Col>
@@ -131,131 +186,133 @@ function BiSList({ setClassSelected, classSelected }) {
     navigate("/BiS");
   }
   console.log("BIS LIST", classSelected);
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{classSelectedURL}</h1>
-        <div className="backgroundOverlay ">
-          <p style={{ fontSize: "14px" }}>
-            <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
-          </p>
-          <Specs />
-          <br />
-          <br />
 
-          <Row style={{ margin: "0", padding: "0" }}>
-            <Col></Col>
-            <Col>
-              {" "}
-              <div className="mb-1 blank">
-                <div className="enchant"></div>
-              </div>
-              <div className="mb-1 blank"></div>
-              <div className="mb-1 blank">
+  if (isSpecSelected) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>{classSelectedURL}</h1>
+          <div className="backgroundOverlay ">
+            <p style={{ fontSize: "14px" }}>
+              <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
+            </p>
+            <Specs />
+            <br />
+            <br />
+
+            <Row style={{ margin: "0", padding: "0" }}>
+              <Col></Col>
+              <Col>
                 {" "}
                 <div className="mb-1 blank">
                   <div className="enchant"></div>
                 </div>
-              </div>
-              <div className="mb-1 blank">
-                {" "}
-                <div className="mb-1 blank">
-                  <div className="enchant"></div>
-                </div>
-              </div>
-              <div className="mb-1 blank">
-                {" "}
-                <div className="mb-1 blank">
-                  <div className="enchant"></div>
-                </div>
-              </div>
-              <div className="mb-1 blank">
-                {" "}
-                <div className="mb-1 blank">
-                  <div className="enchant"></div>
-                </div>
-              </div>
-            </Col>
-            <Col className="justify-content-center text-center colShorten">
-              <div className="mb-1 itemSquare">
-                <Item itemId={25697} rarity={"Legendary"} />
                 <div className="mb-1 blank"></div>
-              </div>
-
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-            </Col>
-            <Col className="colShorten"></Col>
-            <Col className="colShorten"></Col>
-
-            <Col className="text-center colShorten">
-              <div className="mb-1 itemSquare"></div>
-
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-              <div className="mb-1 itemSquare"></div>
-            </Col>
-
-            <Col className="text-center">
-              <div className="mb-1 blank">
-                {" "}
-                <div className="enchantRight"></div>
-              </div>
-
-              <div className="mb-1 blank"> </div>
-              <div className="mb-1 blank">
-                {" "}
-                <div className="enchantRight"></div>
-              </div>
-              <div className="mb-1 blank">
-                {" "}
-                <div className="enchantRight"></div>
-              </div>
-              <Row>
-                <Col>
-                  <div className="mb-1 itemSquare rightSquare"> </div>
-                </Col>{" "}
-                <Col>
-                  <div className="mb-1 itemSquare rightSquare"> </div>
-                </Col>{" "}
-              </Row>
-            </Col>
-            <Col></Col>
-          </Row>
-
-          <Row style={{ margin: 0, padding: 0 }}>
-            <div className=" ">
-              <div className="d-inline-flex">
-                <div className="mx-1  blank">
-                  <div className="enchantAbove"></div>
-                </div>
-                <div className="mx-1 blank">
-                  <div className="enchantAbove"></div>
-                </div>
-                <div className="mx-1  blank">
+                <div className="mb-1 blank">
                   {" "}
-                  <div className="enchantAbove"></div>{" "}
+                  <div className="mb-1 blank">
+                    <div className="enchant"></div>
+                  </div>
+                </div>
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="mb-1 blank">
+                    <div className="enchant"></div>
+                  </div>
+                </div>
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="mb-1 blank">
+                    <div className="enchant"></div>
+                  </div>
+                </div>
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="mb-1 blank">
+                    <div className="enchant"></div>
+                  </div>
+                </div>
+              </Col>
+              <Col className="justify-content-center text-center colShorten">
+                <div className="mb-1 itemSquare">
+                  <Item itemId={25697} rarity={"Legendary"} />
+                  <div className="mb-1 blank"></div>
+                </div>
+
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+              </Col>
+              <Col className="colShorten"></Col>
+              <Col className="colShorten"></Col>
+
+              <Col className="text-center colShorten">
+                <div className="mb-1 itemSquare"></div>
+
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare"></div>
+              </Col>
+
+              <Col className="text-center">
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="enchantRight"></div>
+                </div>
+
+                <div className="mb-1 blank"> </div>
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="enchantRight"></div>
+                </div>
+                <div className="mb-1 blank">
+                  {" "}
+                  <div className="enchantRight"></div>
+                </div>
+                <Row>
+                  <Col>
+                    <div className="mb-1 itemSquare rightSquare"> </div>
+                  </Col>{" "}
+                  <Col>
+                    <div className="mb-1 itemSquare rightSquare"> </div>
+                  </Col>{" "}
+                </Row>
+              </Col>
+              <Col></Col>
+            </Row>
+
+            <Row style={{ margin: 0, padding: 0 }}>
+              <div className=" ">
+                <div className="d-inline-flex">
+                  <div className="mx-1  blank">
+                    <div className="enchantAbove"></div>
+                  </div>
+                  <div className="mx-1 blank">
+                    <div className="enchantAbove"></div>
+                  </div>
+                  <div className="mx-1  blank">
+                    {" "}
+                    <div className="enchantAbove"></div>{" "}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Row>
+            </Row>
 
-          <Row style={{ margin: 0, padding: 0 }}>
-            <div className=" ">
-              <div className="d-inline-flex">
-                <div className="mx-1 itemSquare"></div>
-                <div className="mx-1 itemSquare"></div>
-                <div className="mx-1 itemSquare"> </div>
+            <Row style={{ margin: 0, padding: 0 }}>
+              <div className=" ">
+                <div className="d-inline-flex">
+                  <div className="mx-1 itemSquare"></div>
+                  <div className="mx-1 itemSquare"></div>
+                  <div className="mx-1 itemSquare"> </div>
+                </div>
               </div>
-            </div>
-          </Row>
-          {/* <div style={{ margin: "45px" }}></div> */}
-          {/* <Row>
+            </Row>
+            {/* <div style={{ margin: "45px" }}></div> */}
+            {/* <Row>
             <Row>
               <Col></Col>
               <Col></Col>
@@ -399,7 +456,7 @@ function BiSList({ setClassSelected, classSelected }) {
             </Row>
           </Row> */}
 
-          {/* <Row>
+            {/* <Row>
             <Col></Col>
             <Col></Col>
             <Col>
@@ -452,10 +509,27 @@ function BiSList({ setClassSelected, classSelected }) {
             <Col></Col>
             <Col></Col>
           </Row> */}
-        </div>
-      </header>
-    </div>
-  );
+          </div>
+        </header>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>{classSelectedURL}</h1>
+          <div className="backgroundOverlay ">
+            <p style={{ fontSize: "14px" }}>
+              <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
+            </p>
+            <Specs setSpecSelected={setSpecSelected} />
+            <br />
+            <br />
+          </div>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default BiSList;
