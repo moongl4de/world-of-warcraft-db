@@ -10,6 +10,7 @@ import axios from "axios";
 import wowLogo from "../assets/wow-transparent.png";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import Item from "../components/Item";
+import Enchant from "../components/Enchant";
 import priestIcon from "../assets/icon-priest.webp";
 
 const params = new URLSearchParams(window.location.pathname);
@@ -18,6 +19,9 @@ function BiSList({ setClassSelected, classSelected }) {
   const { classSelectedURL } = useParams();
 
   const [isSpecSelected, setSpecSelected] = useState(false);
+  const [selectedSpec, setSelectedSpec] = useState("");
+
+  const [apiResults, setApiResults] = useState({});
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -31,8 +35,8 @@ function BiSList({ setClassSelected, classSelected }) {
     e.preventDefault();
     console.log("..");
 
-    setSpecSelected(true);
     console.log("selected!", isSpecSelected);
+    setSelectedSpec(spec);
 
     //
     console.log("Selected Spec: ", spec);
@@ -56,9 +60,13 @@ function BiSList({ setClassSelected, classSelected }) {
     console.log("API CONFIG: ", config);
 
     axios(config)
-      .then(function (response) {
-        searchResults = response;
+      .then((response) => {
+        searchResults = response.data;
         console.log(searchResults);
+        setApiResults(searchResults);
+        setSpecSelected(true);
+
+        console.log("api res", apiResults);
       })
       .catch(function (error) {
         console.log(error);
@@ -191,123 +199,317 @@ function BiSList({ setClassSelected, classSelected }) {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>{classSelectedURL}</h1>
           <div className="backgroundOverlay ">
+            {" "}
+            <h1>
+              {selectedSpec} {classSelectedURL}
+            </h1>
             <p style={{ fontSize: "14px" }}>
               <i style={{ color: "lightgrey" }}>Choose a Specialization</i>
             </p>
             <Specs />
             <br />
             <br />
-
             <Row style={{ margin: "0", padding: "0" }}>
               <Col></Col>
               <Col>
                 {" "}
                 <div className="mb-1 blank">
-                  <div className="enchant"></div>
+                  <div className="enchant">
+                    {" "}
+                    <Enchant
+                      itemId={apiResults.enchantHead.itemId}
+                      rarity={apiResults.enchantHead.quality}
+                      iconURL={apiResults.enchantHead.icon}
+                    />
+                  </div>
                 </div>
                 <div className="mb-1 blank"></div>
                 <div className="mb-1 blank">
                   {" "}
                   <div className="mb-1 blank">
-                    <div className="enchant"></div>
+                    <div className="enchant">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantShoulder.itemId}
+                        rarity={apiResults.enchantShoulder.quality}
+                        iconURL={apiResults.enchantShoulder.icon}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-1 blank">
                   {" "}
                   <div className="mb-1 blank">
-                    <div className="enchant"></div>
+                    <div className="enchant">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantBack.itemId}
+                        rarity={apiResults.enchantBack.quality}
+                        iconURL={apiResults.enchantBack.icon}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-1 blank">
                   {" "}
                   <div className="mb-1 blank">
-                    <div className="enchant"></div>
+                    <div className="enchant">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantChest.itemId}
+                        rarity={apiResults.enchantChest.quality}
+                        iconURL={apiResults.enchantChest.icon}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-1 blank">
                   {" "}
                   <div className="mb-1 blank">
-                    <div className="enchant"></div>
+                    <div className="enchant">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantWrist.itemId}
+                        rarity={apiResults.enchantWrist.quality}
+                        iconURL={apiResults.enchantWrist.icon}
+                      />
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col className="justify-content-center text-center colShorten">
                 <div className="mb-1 itemSquare">
-                  <Item itemId={25697} rarity={"Legendary"} />
+                  <Item
+                    // icon={apiResults.head.itemId}
+
+                    itemId={apiResults.head.itemId}
+                    rarity={apiResults.head.quality}
+                    iconURL={apiResults.head.icon}
+                  />
                   <div className="mb-1 blank"></div>
                 </div>
 
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare">
+                  <Item
+                    itemId={apiResults.neck.itemId}
+                    rarity={apiResults.neck.quality}
+                    iconURL={apiResults.neck.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.shoulder.itemId}
+                    rarity={apiResults.shoulder.quality}
+                    iconURL={apiResults.shoulder.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.back.itemId}
+                    rarity={apiResults.back.quality}
+                    iconURL={apiResults.back.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.chest.itemId}
+                    rarity={apiResults.chest.quality}
+                    iconURL={apiResults.chest.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.wrist.itemId}
+                    rarity={apiResults.wrist.quality}
+                    iconURL={apiResults.wrist.icon}
+                  />
+                </div>
               </Col>
               <Col className="colShorten"></Col>
               <Col className="colShorten"></Col>
 
               <Col className="text-center colShorten">
-                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.hands.itemId}
+                    rarity={apiResults.hands.quality}
+                    iconURL={apiResults.hands.icon}
+                  />
+                </div>
 
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
-                <div className="mb-1 itemSquare"></div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.waist.itemId}
+                    rarity={apiResults.waist.quality}
+                    iconURL={apiResults.waist.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.legs.itemId}
+                    rarity={apiResults.legs.quality}
+                    iconURL={apiResults.legs.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.feet.itemId}
+                    rarity={apiResults.feet.quality}
+                    iconURL={apiResults.feet.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.ring1.itemId}
+                    rarity={apiResults.ring1.quality}
+                    iconURL={apiResults.ring1.icon}
+                  />
+                </div>
+                <div className="mb-1 itemSquare">
+                  {" "}
+                  <Item
+                    itemId={apiResults.trinket1.itemId}
+                    rarity={apiResults.trinket1.quality}
+                    iconURL={apiResults.trinket1.icon}
+                  />
+                </div>
               </Col>
 
               <Col className="text-center">
                 <div className="mb-1 blank">
                   {" "}
-                  <div className="enchantRight"></div>
+                  <div className="enchantRight">
+                    {" "}
+                    <Enchant
+                      itemId={apiResults.enchantHands.itemId}
+                      rarity={apiResults.enchantHands.quality}
+                      iconURL={apiResults.enchantHands.icon}
+                    />
+                  </div>
                 </div>
 
                 <div className="mb-1 blank"> </div>
                 <div className="mb-1 blank">
                   {" "}
-                  <div className="enchantRight"></div>
+                  <div className="enchantRight">
+                    {" "}
+                    <Enchant
+                      itemId={apiResults.enchantLegs.itemId}
+                      rarity={apiResults.enchantLegs.quality}
+                      iconURL={apiResults.enchantLegs.icon}
+                    />
+                  </div>
                 </div>
                 <div className="mb-1 blank">
                   {" "}
-                  <div className="enchantRight"></div>
+                  <div className="enchantRight">
+                    {" "}
+                    <Enchant
+                      itemId={apiResults.enchantFeet.itemId}
+                      rarity={apiResults.enchantFeet.quality}
+                      iconURL={apiResults.enchantFeet.icon}
+                    />
+                  </div>
                 </div>
                 <Row>
                   <Col>
-                    <div className="mb-1 itemSquare rightSquare"> </div>
+                    <div className="mb-1 itemSquare rightSquare">
+                      {" "}
+                      <Item
+                        itemId={apiResults.ring2.itemId}
+                        rarity={apiResults.ring2.quality}
+                        iconURL={apiResults.ring2.icon}
+                      />{" "}
+                    </div>
                   </Col>{" "}
                   <Col>
-                    <div className="mb-1 itemSquare rightSquare"> </div>
+                    <div className="mb-1 itemSquare rightSquare">
+                      {" "}
+                      <Item
+                        itemId={apiResults.trinket2.itemId}
+                        rarity={apiResults.trinket2.quality}
+                        iconURL={apiResults.trinket2.icon}
+                      />{" "}
+                    </div>
                   </Col>{" "}
                 </Row>
               </Col>
               <Col></Col>
             </Row>
-
             <Row style={{ margin: 0, padding: 0 }}>
               <div className=" ">
                 <div className="d-inline-flex">
                   <div className="mx-1  blank">
-                    <div className="enchantAbove"></div>
+                    <div className="enchantAbove">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantMainhand.itemId}
+                        rarity={apiResults.enchantMainhand.quality}
+                        iconURL={apiResults.enchantMainhand.icon}
+                      />
+                    </div>
                   </div>
                   <div className="mx-1 blank">
-                    <div className="enchantAbove"></div>
+                    <div className="enchantAbove">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantOffhand.itemId}
+                        rarity={apiResults.enchantOffhand.quality}
+                        iconURL={apiResults.enchantOffhand.icon}
+                      />
+                    </div>
                   </div>
                   <div className="mx-1  blank">
                     {" "}
-                    <div className="enchantAbove"></div>{" "}
+                    <div className="enchantAbove">
+                      {" "}
+                      <Enchant
+                        itemId={apiResults.enchantRanged.itemId}
+                        rarity={apiResults.enchantRanged.quality}
+                        iconURL={apiResults.enchantRanged.icon}
+                      />
+                    </div>{" "}
                   </div>
                 </div>
               </div>
             </Row>
-
             <Row style={{ margin: 0, padding: 0 }}>
               <div className=" ">
                 <div className="d-inline-flex">
-                  <div className="mx-1 itemSquare"></div>
-                  <div className="mx-1 itemSquare"></div>
-                  <div className="mx-1 itemSquare"> </div>
+                  <div className="mx-1 itemSquare">
+                    {" "}
+                    <Item
+                      itemId={apiResults.mainhand.itemId}
+                      rarity={apiResults.mainhand.quality}
+                      iconURL={apiResults.mainhand.icon}
+                    />
+                  </div>
+                  <div className="mx-1 itemSquare">
+                    {" "}
+                    <Item
+                      itemId={apiResults.offhand.itemId}
+                      rarity={apiResults.offhand.quality}
+                      iconURL={apiResults.offhand.icon}
+                    />
+                  </div>
+                  <div className="mx-1 itemSquare">
+                    {" "}
+                    <Item
+                      itemId={apiResults.ranged.itemId}
+                      rarity={apiResults.ranged.quality}
+                      iconURL={apiResults.ranged.icon}
+                    />
+                  </div>
                 </div>
               </div>
             </Row>
@@ -455,7 +657,6 @@ function BiSList({ setClassSelected, classSelected }) {
               <Col></Col>
             </Row>
           </Row> */}
-
             {/* <Row>
             <Col></Col>
             <Col></Col>

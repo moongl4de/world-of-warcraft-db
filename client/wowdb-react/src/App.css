@@ -69,14 +69,29 @@ body {
   /* margin: 5px; */
 }
 
+.Common {
+  border: 4px solid #ffffff;
+  box-shadow: 0px 0px 10px #ffffff;
+}
+
+.Uncommon {
+  border: 4px solid #1eff00;
+  box-shadow: 0px 0px 10px #1eff00;
+}
+
 .Rare {
-  border: 4px solid rgb(30, 30, 160);
-  box-shadow: 0px 0px 10px rgb(30, 30, 160);
+  border: 4px solid #0070dd;
+  box-shadow: 0px 0px 10px #0070dd;
 }
 
 .Legendary {
-  border: 4px solid rgb(255, 102, 0);
-  box-shadow: 0px 0px 10px rgb(255, 102, 0);
+  border: 4px solid #0070dd;
+  box-shadow: 0px 0px 10px #0070dd;
+}
+
+.Epic {
+  border: 4px solid #a335ee;
+  box-shadow: 0px 0px 10px #a335ee;
 }
 
 #leftCol {
@@ -93,18 +108,37 @@ body {
 }
 
 .enchant {
-  border: 1px solid rgba(255, 255, 255, 0.596);
-  width: 1rem;
-  height: 1rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.596); */
+  width: 2rem;
+  height: 2rem;
   max-width: 100px;
   max-height: 100px;
   position: absolute;
-  left: 22%;
+  left: 27%;
+  /* border: 4px solid white; */
 
-  margin: 12px auto;
+  margin: 3px auto;
+}
+
+.enchantRight {
+  /* border: 1px solid rgba(255, 255, 255, 0.596); */
+  width: 2rem;
+  height: 2rem;
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  right: 35%;
+  margin: 3px auto;
+}
+
+.enchantIcon {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0;
+  padding: 0;
 }
 .enchantAbove {
-  border: 1px solid rgba(255, 255, 255, 0.596);
+  /* border: 1px solid rgba(255, 255, 255, 0.596); */
   width: 1rem;
   height: 1rem;
   margin: 0;
@@ -112,17 +146,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.enchantRight {
-  border: 1px solid rgba(255, 255, 255, 0.596);
-  width: 1rem;
-  height: 1rem;
-  max-width: 100px;
-  max-height: 100px;
-  position: relative;
-  right: 35%;
-  margin: 12px auto;
 }
 
 .specBtn {
@@ -156,12 +179,14 @@ body {
   text-align: center;
   background-color: #424242;
   background-image: url("../src/assets/nefarian-image.jpg");
+
   /* background-image: url("../src/assets/ragnaros.jpg");
   background-image: url("../src/assets/hakkar.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   padding: 0;
 }
 
@@ -264,7 +289,7 @@ body {
   border-radius: 1px;
   text-shadow: 0px 0px 4px black;
   border: 1px solid rgba(255, 255, 255, 0.308);
-  padding: 0;
+  padding-bottom: 55px;
   margin: 0;
   overflow: hidden;
 }
